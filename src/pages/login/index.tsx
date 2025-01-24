@@ -2,16 +2,14 @@ import React,{ useState } from "react";
 import { style } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { View, Alert} from 'react-native'
-import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { View } from 'react-native'
 import { MaterialIcons, Octicons } from '@expo/vector-icons';
 import { useAuth } from "../../contexts/auth";
 
 export default function Login (){
-    const navigation = useNavigation<NavigationProp<any>>();
 
-    const [email, setEmail]               = useState('arthur@gmail.com');
-    const [password, setPassword]         = useState('12345');
+    const [email, setEmail] = useState('arthur@gmail.com');
+    const [password, setPassword] = useState('12345');
     const [showPassword, setShowPassword] = useState(true);
     const { login } = useAuth();
 

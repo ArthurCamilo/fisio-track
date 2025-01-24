@@ -7,12 +7,6 @@ export const styles = StyleSheet.create({
         padding: 16,
         flex: 1,
     },
-    closeButton: {
-        height: 60,
-        paddingTop: 16,
-        marginBottom: 16,
-        justifyContent: 'center',
-    },
     patientDetails: {
         marginBottom: 16,
     },

@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { TouchableOpacity, View, Text, FlatList } from 'react-native';
-import { Patient } from '../../global/interfaces/patient';
 import { styles } from './styles';
-import { themes } from '../../global/themes';
-import { Entypo } from '@expo/vector-icons';
 import { NavigationProp } from '@react-navigation/native';
-import { TestsRequester } from '../../requesters/testsRequester';
 import { Test } from '../../global/interfaces/test';
-import { Button } from '../../components/Button';
 import PageHeader from '../../components/PageHeader';
 
 const TestDetails = ({ route, navigation }: { route: any , navigation: NavigationProp<any> }) => {
@@ -37,7 +32,6 @@ const TestDetails = ({ route, navigation }: { route: any , navigation: Navigatio
                 <TouchableOpacity>
                     <Text>{test.date.toLocaleDateString()}</Text>
                     <Text>{test.type.name}</Text>
-                    
                     <Text>{test.patient.name}</Text>
                 </TouchableOpacity>
             </View>
