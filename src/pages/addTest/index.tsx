@@ -7,6 +7,7 @@ import { themes } from '../../global/themes';
 import SelectPatient from './components/selectPatient';
 import AddNewPatient from './components/addNewPatient';
 import PageHeader from '../../components/PageHeader';
+import TestFlow from './components/testFlow';
 
 const AddTest = ({ route, navigation }: { route: any, navigation: any }) => {
     const [patients, setPatients] = useState<Patient[]>([]);
@@ -30,6 +31,9 @@ const AddTest = ({ route, navigation }: { route: any, navigation: any }) => {
             case 'addNewPatient':
                 setPageStep('selectPatient');
                 break;
+            case 'addTest':
+                setPageStep('selectPatient');
+                break;
             default:
                 navigation.goBack();
                 break;
@@ -42,11 +46,19 @@ const AddTest = ({ route, navigation }: { route: any, navigation: any }) => {
     };
 
     const renderSubPage = () => {
+
+        const testSetup = {
+            effortDuration: 10,
+            restDuration: 5,
+            repetitions: 5,
+            muscleGroup: 'Quadriceps',
+        };
+
         switch (pageStep) {
             case 'addNewPatient':
                 return <AddNewPatient handleSave={handleSaveNewPatient} />;
             case 'addTest':
-                return <View />;
+                return <TestFlow selectedPatient={selectedPatient} testSetup={testSetup} />;
             default:
                 return <SelectPatient handleSelectPatient={handleSelectPatient} handleAddNewPatientButton={handleAddNewPatientButton} patients={patients} setPatients={setPatients} />;
         }

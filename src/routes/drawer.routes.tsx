@@ -1,8 +1,6 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PatientsPage from '../pages/patients';
 import TestsPage from '../pages/tests';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomePage from '../pages/home';
 import { CustomDrawerContent } from '../components/CustomDrawerContent';
 import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
